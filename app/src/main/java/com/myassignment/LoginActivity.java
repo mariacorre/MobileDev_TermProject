@@ -80,8 +80,8 @@ public class LoginActivity extends Activity {
                         session.createUserLoginSession(uName,
                                 uPassword);
 
-//                        Intent i = new  Intent(getApplicationContext(),SelectQuizActivity.class);
-                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent i = new  Intent(getApplicationContext(),SelectQuizActivity.class);
+//                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
 
                         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
