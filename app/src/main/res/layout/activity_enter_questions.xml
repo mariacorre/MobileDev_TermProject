@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textViewQOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Enter Question 1"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/questionOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="Question"
+        android:layout_marginTop="20dp"
+        android:inputType="textPersonName"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textViewQOne"/>
+
+    <EditText
+        android:id="@+id/answerOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="20"
+        android:layout_marginTop="10dp"
+        android:hint ="Answer"
+        android:layout_below="@+id/questionOne"/>
+
+    <TextView
+        android:id="@+id/textViewTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/answerOne"
+        android:layout_marginTop="50dp"
+        android:text="Enter Question 2"
+        android:textSize="20sp" />
+    <EditText
+        android:id="@+id/questionTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint = "Question"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textViewTwo"/>
+
+    <EditText
+        android:id="@+id/answerTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint = "Answer"
+        android:layout_below="@+id/questionTwo"/>
+
+    <TextView
+        android:id="@+id/textViewThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/answerTwo"
+        android:layout_marginTop="50dp"
+        android:text="Enter Question 3"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/questionThree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Question"
+        android:layout_below="@+id/textViewThree" />
+
+    <EditText
+        android:id="@+id/answerThree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint = "Answer"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/questionThree"/>
+
+    <Button
+        android:id="@+id/buttonSubmitAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_below="@+id/answerThree"
+        android:layout_marginTop="70dp"
+        android:text="Submit"
+        />
+
+
+
+
+
+
+
+</RelativeLayout>

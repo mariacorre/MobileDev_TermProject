@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Question"
+        android:textSize="14sp"
+        android:paddingTop="20sp"
+        android:gravity="center_horizontal"
+        android:layout_above="@+id/btn_one"
+        android:layout_alignParentTop="true"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <Button
+            android:layout_marginTop="50dp"
+            android:id="@+id/btn_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/btn_two"
+            android:textColor="#ffffff"
+            android:background="@color/colorPrimaryDark"/>
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/btn_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/btn_three"
+            android:textColor="#ffffff"
+            android:background="@color/colorPrimaryDark"/>
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/btn_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/btn_four"
+            android:textColor="#ffffff"
+            android:background="@color/colorPrimaryDark"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>
