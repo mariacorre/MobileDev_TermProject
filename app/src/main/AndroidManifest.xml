@@ -26,6 +26,7 @@
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat"
             tools:ignore="DuplicateActivity" />
+        <activity android:name=".SelectQuizActivity"></activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".RagisterActivity" />
         <activity android:name=".LoginActivity">
@@ -35,6 +36,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

@@ -28,12 +28,12 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Button switchButton = (Button)findViewById(R.id.buttonReg);
-        switchButton.setOnClickListener (new View.OnClickListener() {
+        Button switchButton = (Button) findViewById(R.id.buttonReg);
+        switchButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(LoginActivity.this, RagisterActivity.class);
+                Intent intent = new Intent(LoginActivity.this, RagisterActivity.class);
                 startActivity(intent);
 
             }
@@ -62,27 +62,27 @@ public class LoginActivity extends Activity {
                 String username = txtUsername.getText().toString();
                 String password = txtPassword.getText().toString();
 
-                if(username.trim().length() > 0 && password.trim().length() > 0){
+                if (username.trim().length() > 0 && password.trim().length() > 0) {
                     String uName = null;
-                    String uPassword =null;
-                    if (sharedPreferences.contains("Email"))
-                    {
+                    String uPassword = null;
+                    if (sharedPreferences.contains("Email")) {
                         uName = sharedPreferences.getString("Email", "");
 
                     }
 
-                    if (sharedPreferences.contains("txtPassword"))
-                    {
+                    if (sharedPreferences.contains("txtPassword")) {
                         uPassword = sharedPreferences.getString("txtPassword", "");
 
                     }
 
 
-                    if(username.equals(uName) && password.equals(uPassword)){
+                    if (username.equals(uName) && password.equals(uPassword)) {
                         session.createUserLoginSession(uName,
                                 uPassword);
 
-                        Intent i = new  Intent(getApplicationContext(),MainActivity.class);
+                        Intent i = new  Intent(getApplicationContext(),SelectQuizActivity.class);
+//                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+
                         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
                         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -90,13 +90,13 @@ public class LoginActivity extends Activity {
 
                         finish();
 
-                    }else{
+                    } else {
 
                         Toast.makeText(getApplicationContext(),
                                 "Email/Password is incorrect",
                                 Toast.LENGTH_LONG).show();
                     }
-                }else{
+                } else {
 
                     // user didn't entered username or password
                     Toast.makeText(getApplicationContext(),
