@@ -27,7 +27,9 @@
             android:theme="@style/Base.Theme.AppCompat"
             tools:ignore="DuplicateActivity" />
         <activity android:name=".SelectQuizActivity"></activity>
-        <activity android:name=".CreateQuizActivity"></activity>
+        <activity android:name=".CreateQuizActivity"
+            android:label="Add Questions">
+        </activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".RagisterActivity" />
         <activity android:name=".LoginActivity">

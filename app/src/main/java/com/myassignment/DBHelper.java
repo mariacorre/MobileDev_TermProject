@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -19,9 +20,12 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String QUESTIONS_COLUMN_CHOICE1 = "choice1";
     public static final String QUESTIONS_COLUMN_CHOICE2 = "choice2";
     public static final String QUESTIONS_COLUMN_CHOICE3 = "choice3";
+    private int text;
+    private Context context;
 
     public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
+        this.context = context;
     }
 
     @Override
@@ -52,8 +56,11 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put(QUESTIONS_COLUMN_CHOICE1, choice1);
         contentValues.put(QUESTIONS_COLUMN_CHOICE2, choice2);
         contentValues.put(QUESTIONS_COLUMN_CHOICE3, choice3);
-        db.insert(QUESTIONS_TABLE_NAME, null, contentValues);
-        return true;
+        long result = db.insert(QUESTIONS_TABLE_NAME, null, contentValues);
+        if(result == 1){
+            return true;
+        }
+        return false;
     }
 
     public Cursor getData(int id) {
@@ -77,6 +84,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put(QUESTIONS_COLUMN_CHOICE2, choice2);
         contentValues.put(QUESTIONS_COLUMN_CHOICE3, choice3);
         db.update(QUESTIONS_TABLE_NAME, contentValues, QUESTIONS_COLUMN_ID + " = ? ", new String[]{Integer.toString(id)});
+
         return true;
     }
 

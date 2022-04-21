@@ -16,6 +16,9 @@ import android.widget.Toast;
 public class CreateQuizActivity extends Activity {
     Button buttonCreateQuiz;
     UserSession session;
+    EditText questionOne,answerOne,choiceOne,choiceTwo,choiceThree;
+    Button buttonAdd;
+
     private SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,31 @@ public class CreateQuizActivity extends Activity {
         sharedPreferences = getSharedPreferences(PREFER_NAME, Context.MODE_PRIVATE);
         String uName = sharedPreferences.getString("Name", "");
 
+
+
+        questionOne = findViewById(R.id.questionOne);
+        answerOne = findViewById(R.id.answerOne);
+        choiceOne = findViewById(R.id.choiceOne);
+        choiceTwo = findViewById(R.id.choiceTwo);
+        choiceThree = findViewById(R.id.choiceThree);
+        buttonAdd = findViewById(R.id.buttonAdd);
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DBHelper myDB = new DBHelper(CreateQuizActivity.this);
+                boolean result = myDB.insertQuestion(questionOne.getText().toString().trim(),
+                        answerOne.getText().toString().trim(),
+                        choiceOne.getText().toString().trim(),
+                        choiceTwo.getText().toString().trim(),
+                        choiceThree.getText().toString().trim());
+                if (result) {
+                    Toast.makeText(getApplicationContext(), "Saved Successfully", Toast.LENGTH_SHORT).show();
+                    //clear fields
+                } else {
+                    Toast.makeText(getApplicationContext(), "Error Encountered while Saving.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
 
     }

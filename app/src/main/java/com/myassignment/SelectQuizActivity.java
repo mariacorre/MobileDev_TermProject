@@ -1,6 +1,7 @@
 package com.myassignment;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -22,8 +23,8 @@ public class SelectQuizActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new  Intent(getApplicationContext(),CreateQuizActivity.class);
-//                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                Intent i = new Intent(getApplicationContext(), CreateQuizActivity.class);
+
 
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -38,9 +39,7 @@ public class SelectQuizActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new  Intent(getApplicationContext(),CreateQuizActivity.class);
-//                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-
+                Intent i = new Intent(getApplicationContext(), StartQuizActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(i);

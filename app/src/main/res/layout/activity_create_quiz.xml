@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -7,30 +8,32 @@
         android:id="@+id/textViewQOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Enter Question 1"
+        android:layout_marginTop="100dp"
+        android:text="@string/enter_question_1"
         android:textSize="20sp" />
 
     <EditText
         android:id="@+id/questionOne"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:hint="Question"
-        android:layout_marginTop="20dp"
-        android:inputType="textPersonName"
+        android:layout_below="@+id/textViewQOne"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/textViewQOne"/>
+        android:layout_marginTop="20dp"
+        android:autofillHints=""
+        android:hint="@string/question"
+        android:inputType="textPersonName"
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/answerOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="20"
+        android:layout_below="@+id/questionOne"
         android:layout_marginTop="10dp"
-        android:hint ="Answer"
-        android:layout_below="@+id/questionOne"/>
+        android:ems="20"
+        android:hint="@string/answer"
+        android:minHeight="48dp"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textViewTwo"
@@ -38,66 +41,67 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/answerOne"
         android:layout_marginTop="50dp"
-        android:text="Enter Question 2"
+        android:text="@string/enter_choices"
         android:textSize="20sp" />
+
     <EditText
-        android:id="@+id/questionTwo"
+        android:id="@+id/choiceOne"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint = "Question"
+        android:layout_below="@+id/textViewTwo"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/textViewTwo"/>
-
-    <EditText
-        android:id="@+id/answerTwo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:ems="10"
-        android:hint = "Answer"
-        android:layout_below="@+id/questionTwo"/>
-
-    <TextView
-        android:id="@+id/textViewThree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/answerTwo"
-        android:layout_marginTop="50dp"
-        android:text="Enter Question 3"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/questionThree"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
+        android:hint="@string/choice_1"
         android:inputType="textPersonName"
-        android:hint="Question"
-        android:layout_below="@+id/textViewThree" />
+        android:minHeight="48dp"
+        android:autofillHints="" />
 
     <EditText
-        android:id="@+id/answerThree"
+        android:id="@+id/choiceTwo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_below="@+id/choiceOne"
         android:ems="10"
-        android:hint = "Answer"
+        android:hint="@string/choice_2"
+        android:minHeight="48dp"
+        android:autofillHints="" />
+
+
+    <EditText
+        android:id="@+id/choiceThree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/choiceTwo"
+        android:ems="10"
+        android:hint="@string/choice_3"
         android:inputType="textPersonName"
-        android:layout_below="@+id/questionThree"/>
+        android:minHeight="48dp"
+        android:autofillHints="" />
 
     <Button
-        android:id="@+id/buttonSubmitAnswer"
-        android:layout_width="match_parent"
+        android:id="@+id/buttonAdd"
+        android:layout_width="1in"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_below="@+id/answerThree"
-        android:layout_marginTop="70dp"
-        android:text="Submit"
-        />
+        android:layout_below="@+id/choiceThree"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="66dp"
+        android:background="@color/blue_400"
+        android:text="@string/add"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="InOrMmUsage" />
+
+    <Button
+        android:id="@+id/buttonDone"
+        android:layout_width="1in"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonAdd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/done"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="InOrMmUsage" />
 
 
 
