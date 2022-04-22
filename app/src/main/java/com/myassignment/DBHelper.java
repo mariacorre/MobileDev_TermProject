@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -95,15 +96,23 @@ public class DBHelper extends SQLiteOpenHelper {
                 new String[]{Integer.toString(id)});
     }
 
-    public ArrayList<String> getAllQuestions() {
-        ArrayList<String> list = new ArrayList<String>();
+    public List<Question> getAllQuestions() {
+        List<Question> list = new ArrayList<Question>();
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("select * from " + QUESTIONS_TABLE_NAME, null);
         res.moveToFirst();
 
         while (res.isAfterLast() == false) {
-            list.add(res.getString(res.getColumnIndex(QUESTIONS_COLUMN_QUESTION)));
+            Question q = new Question();
+            q.setId(res.getInt(res.getColumnIndex("id")));
+            q.setQuestion(res.getString(res.getColumnIndex(QUESTIONS_COLUMN_QUESTION)));
+            q.setAnswer(res.getString(res.getColumnIndex(QUESTIONS_COLUMN_ANSWER)));
+            q.setChoice1(res.getString(res.getColumnIndex(QUESTIONS_COLUMN_CHOICE1)));
+            q.setChoice2(res.getString(res.getColumnIndex(QUESTIONS_COLUMN_CHOICE2)));
+            q.setChoice3(res.getString(res.getColumnIndex(QUESTIONS_COLUMN_CHOICE3)));
+
+            list.add(q);
             res.moveToNext();
         }
         return list;

@@ -16,11 +16,12 @@ import android.widget.Toast;
 public class CreateQuizActivity extends Activity {
     Button buttonCreateQuiz;
     UserSession session;
-    EditText questionOne,answerOne,choiceOne,choiceTwo,choiceThree;
+    EditText questionOne, answerOne, choiceOne, choiceTwo, choiceThree;
     Button buttonAdd, buttonDone;
 
 
     private SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
