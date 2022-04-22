@@ -1,4 +1,4 @@
-package com.myassignment;
+package com.MobileDevTermProj;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,6 +6,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.MobileDevTermProj.R;
+
 
 public class AddQuestion extends AppCompatActivity {
     EditText questionOne,answerOne,choiceOne,choiceTwo,choiceThree;

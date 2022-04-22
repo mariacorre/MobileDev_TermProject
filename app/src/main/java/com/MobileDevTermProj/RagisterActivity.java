@@ -1,10 +1,6 @@
-package com.myassignment;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.MobileDevTermProj;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -20,7 +16,6 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.theartofdev.edmodo.cropper.CropImage;
 
-import java.io.File;
 import java.io.IOException;
 
 public class RagisterActivity extends Activity {

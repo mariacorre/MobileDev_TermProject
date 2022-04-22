@@ -1,4 +1,4 @@
-package com.myassignment;
+package com.MobileDevTermProj;
 
 import android.content.Context;
 import android.content.Intent;

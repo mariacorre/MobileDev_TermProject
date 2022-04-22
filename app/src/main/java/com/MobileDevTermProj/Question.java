@@ -1,4 +1,4 @@
-package com.myassignment;
+package com.MobileDevTermProj;
 
 public class Question {
     private int id;

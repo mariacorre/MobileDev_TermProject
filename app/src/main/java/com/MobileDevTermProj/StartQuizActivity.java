@@ -1,6 +1,6 @@
-package com.myassignment;
+package com.MobileDevTermProj;
 
-import static com.myassignment.UserSession.PREFER_NAME;
+import static com.MobileDevTermProj.UserSession.PREFER_NAME;
 
 import android.app.Activity;
 import android.content.Context;
