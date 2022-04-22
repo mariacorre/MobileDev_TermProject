@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="20dp"
+    android:padding="30dp"
     android:layout_gravity="center_vertical">
 
     <Button
@@ -13,6 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="300dp"
         android:text="@string/start_quiz"
+        android:textSize="20dp"
         android:textColor="#ffffff"
         android:background="@color/colorPrimaryDark"/>
 
@@ -24,6 +25,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="@string/create_quiz"
+        android:textSize="20dp"
         android:textColor="#ffffff"
         android:background="@color/colorPrimaryDark"/>
 </LinearLayout>

@@ -87,7 +87,7 @@
             android:id="@+id/buttonReg2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ragister"
+            android:text="Register"
             android:textColor="#ffffff"
             android:background="@color/colorPrimaryDark"/>
 

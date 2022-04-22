@@ -121,7 +121,7 @@ public class StartQuizActivity extends Activity {
     }
 
     private void setFields(Question q) {
-        starQuizQuestion.setText("Question " + (questionCounter + 1) + "/3: \n" + q.getQuestion());
+        starQuizQuestion.setText("Question " + (questionCounter + 1) + "/3: \n \n" + q.getQuestion());
         radiobtnOne.setText(q.getChoice1());
         radiobtnTwo.setText(q.getChoice2());
         radiobtnThree.setText(q.getChoice3());
