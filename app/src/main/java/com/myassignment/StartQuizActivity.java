@@ -16,6 +16,7 @@ public class StartQuizActivity extends Activity {
     Button buttonCreateQuiz;
     UserSession session;
     //private SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +26,9 @@ public class StartQuizActivity extends Activity {
 
         session = new UserSession(getApplicationContext());
 
-//        Toast.makeText(getApplicationContext(),
-//                "User Login Status: " + session.isUserLoggedIn(),
-//                Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),
+                "User Login Status: " + session.isUserLoggedIn(),
+                Toast.LENGTH_LONG).show();
 
 
        // sharedPreferences = getSharedPreferences(PREFER_NAME, Context.MODE_PRIVATE);

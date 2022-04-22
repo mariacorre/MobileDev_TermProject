@@ -57,7 +57,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put(QUESTIONS_COLUMN_CHOICE2, choice2);
         contentValues.put(QUESTIONS_COLUMN_CHOICE3, choice3);
         long result = db.insert(QUESTIONS_TABLE_NAME, null, contentValues);
-        if(result == 1){
+        if(result > 0){
             return true;
         }
         return false;

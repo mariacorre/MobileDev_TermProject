@@ -17,7 +17,8 @@ public class CreateQuizActivity extends Activity {
     Button buttonCreateQuiz;
     UserSession session;
     EditText questionOne,answerOne,choiceOne,choiceTwo,choiceThree;
-    Button buttonAdd;
+    Button buttonAdd, buttonDone;
+
 
     private SharedPreferences sharedPreferences;
     @Override
@@ -25,19 +26,14 @@ public class CreateQuizActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_quiz);
 
-
-
         session = new UserSession(getApplicationContext());
 
 //        Toast.makeText(getApplicationContext(),
 //                "User Login Status: " + session.isUserLoggedIn(),
 //                Toast.LENGTH_LONG).show();
 
-
         sharedPreferences = getSharedPreferences(PREFER_NAME, Context.MODE_PRIVATE);
         String uName = sharedPreferences.getString("Name", "");
-
-
 
         questionOne = findViewById(R.id.questionOne);
         answerOne = findViewById(R.id.answerOne);
@@ -57,12 +53,33 @@ public class CreateQuizActivity extends Activity {
                 if (result) {
                     Toast.makeText(getApplicationContext(), "Saved Successfully", Toast.LENGTH_SHORT).show();
                     //clear fields
+
+                    questionOne.setText(null);
+                    answerOne.setText(null);
+                    choiceOne.setText(null);
+                    choiceTwo.setText(null);
+                    choiceThree.setText(null);
+
+                    questionOne.requestFocus();
                 } else {
                     Toast.makeText(getApplicationContext(), "Error Encountered while Saving.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
+        buttonDone = findViewById(R.id.buttonDone);
+        buttonDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), SelectQuizActivity.class);
+
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
+
+                finish();
+            }
+        });
 
     }
 }
