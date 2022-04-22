@@ -61,34 +61,42 @@ public class StartQuizActivity extends Activity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (questionCounter < 3) {
-                    if (answer.equalsIgnoreCase(question.getAnswer())) {
-                        score++;
-                    }
-                    choices.clearCheck();
-                    question = nextQuestion(random.nextInt(questionList.size()));
-                    setFields(question);
-                    questionCounter++;
-                } else if (questionCounter == 3) {
-                    if (answer.equalsIgnoreCase(question.getAnswer())) {
-                        score++;
-                    }
+                if (answer == null) {
                     Toast.makeText(getApplicationContext(),
-                            "Result: " + score,
+                            "Please select answer",
                             Toast.LENGTH_LONG).show();
+                } else {
+                    if (questionCounter < 3) {
+                        if (answer.equalsIgnoreCase(question.getAnswer())) {
+                            score++;
+                        }
+                        choices.clearCheck();
+                        question = nextQuestion(random.nextInt(questionList.size()));
+                        setFields(question);
+                        answer = null;
+                        questionCounter++;
+                    } else if (questionCounter == 3) {
+                        if (answer.equalsIgnoreCase(question.getAnswer())) {
+                            score++;
+                        }
+                        Toast.makeText(getApplicationContext(),
+                                "Result: " + score,
+                                Toast.LENGTH_LONG).show();
 
-                    editor = sharedPreferences.edit();
-                    editor.putString("finalScore", String.valueOf(score));
-                    editor.commit();
+                        editor = sharedPreferences.edit();
+                        editor.putString("finalScore", String.valueOf(score));
+                        editor.commit();
 
-                    Intent i = new Intent(getApplicationContext(), ResultActivity.class);
+                        Intent i = new Intent(getApplicationContext(), ResultActivity.class);
 
-                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(i);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(i);
 
-                    finish();
+                        finish();
+                    }
                 }
+
             }
         });
 

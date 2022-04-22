@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="20dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="@string/enter_question_1"
-        android:textSize="20sp" />
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/questionOne"
@@ -42,7 +42,7 @@
         android:layout_below="@+id/answerOne"
         android:layout_marginTop="50dp"
         android:text="@string/enter_choices"
-        android:textSize="20sp" />
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/choiceOne"
@@ -80,28 +80,29 @@
 
     <Button
         android:id="@+id/buttonAdd"
-        android:layout_width="1in"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/choiceThree"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="66dp"
-        android:background="@color/blue_400"
+        android:background="@color/colorPrimaryDark"
         android:text="@string/add"
+        android:textColor="#ffffff"
         android:textSize="20sp"
-        android:textStyle="bold"
-        tools:ignore="InOrMmUsage" />
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/buttonDone"
-        android:layout_width="1in"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonAdd"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="@string/done"
         android:textSize="20sp"
-        android:textStyle="bold"
-        tools:ignore="InOrMmUsage" />
+        android:textColor="#ffffff"
+        android:background="@color/colorPrimaryDark"
+        android:textStyle="bold" />
 
 
 
