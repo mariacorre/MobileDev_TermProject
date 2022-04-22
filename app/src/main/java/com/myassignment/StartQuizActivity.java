@@ -29,6 +29,7 @@ public class StartQuizActivity extends Activity {
     private int score, questionCounter;
     private String answer;
     private Question question;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +77,11 @@ public class StartQuizActivity extends Activity {
                             "Result: " + score,
                             Toast.LENGTH_LONG).show();
 
-                    Intent i = new Intent(getApplicationContext(), SelectQuizActivity.class);
+                    editor = sharedPreferences.edit();
+                    editor.putString("finalScore", String.valueOf(score));
+                    editor.commit();
+
+                    Intent i = new Intent(getApplicationContext(), ResultActivity.class);
 
                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

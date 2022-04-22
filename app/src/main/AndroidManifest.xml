@@ -33,6 +33,9 @@
         <activity android:name=".StartQuizActivity"
             android:label="Start Quiz">
         </activity>
+        <activity android:name=".ResultActivity"
+            android:label="Result">
+        </activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".RagisterActivity" />
         <activity android:name=".LoginActivity">
