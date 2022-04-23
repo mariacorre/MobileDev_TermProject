@@ -35,7 +35,7 @@ public class RagisterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ragister);
         txtUsername = (EditText) findViewById(R.id.Name);
-        txtPassword = (EditText) findViewById(R.id.txtPassword);
+        txtPassword = (EditText) findViewById(R.id.txtPassword2);
         txtEmail = (EditText) findViewById(R.id.Email);
         txtEnterSecurity = (EditText) findViewById(R.id.txtEnterSecurity);
         buttonReg2 = (Button) findViewById(R.id.buttonReg2);

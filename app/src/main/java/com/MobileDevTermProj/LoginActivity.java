@@ -19,6 +19,7 @@ public class LoginActivity extends Activity {
     UserSession session;
     private SharedPreferences sharedPreferences;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +49,7 @@ public class LoginActivity extends Activity {
 
         session = new UserSession(getApplicationContext());
         txtUsername = (EditText) findViewById(R.id.txtUsername);
-        txtPassword = (EditText) findViewById(R.id.txtPassword);
+        txtPassword = (EditText) findViewById(R.id.txtPassword2);
 
 //        Toast.makeText(getApplicationContext(),
 //                "User Login Status: " + session.isUserLoggedIn(),
