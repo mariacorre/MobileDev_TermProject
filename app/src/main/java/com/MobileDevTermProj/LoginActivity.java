@@ -19,11 +19,13 @@ public class LoginActivity extends Activity {
     UserSession session;
     private SharedPreferences sharedPreferences;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Button switchButton = (Button) findViewById(R.id.buttonReg);
+        Button forgotButton = (Button) findViewById(R.id.buttonForgotPwd);
         switchButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -34,10 +36,20 @@ public class LoginActivity extends Activity {
             }
         });
 
+        forgotButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, Forgot_Password.class);
+                startActivity(intent);
+
+            }
+        });
+
 
         session = new UserSession(getApplicationContext());
         txtUsername = (EditText) findViewById(R.id.txtUsername);
-        txtPassword = (EditText) findViewById(R.id.txtPassword);
+        txtPassword = (EditText) findViewById(R.id.txtPassword2);
 
 //        Toast.makeText(getApplicationContext(),
 //                "User Login Status: " + session.isUserLoggedIn(),
