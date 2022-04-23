@@ -24,11 +24,22 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Button switchButton = (Button) findViewById(R.id.buttonReg);
+        Button forgotButton = (Button) findViewById(R.id.buttonForgotPwd);
         switchButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RagisterActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        forgotButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, Forgot_Password.class);
                 startActivity(intent);
 
             }

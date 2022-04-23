@@ -10,7 +10,9 @@
         android:maxSdkVersion="22" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
@@ -23,29 +25,31 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Forgot_Password"
+            android:exported="false" />
+        <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat"
             tools:ignore="DuplicateActivity" />
-        <activity android:name="com.MobileDevTermProj.SelectQuizActivity"></activity>
-        <activity android:name="com.MobileDevTermProj.CreateQuizActivity"
-            android:label="Add Questions">
-        </activity>
-        <activity android:name="com.MobileDevTermProj.StartQuizActivity"
-            android:label="Start Quiz">
-        </activity>
-        <activity android:name="com.MobileDevTermProj.ResultActivity"
-            android:label="Result">
-        </activity>
-        <activity android:name="com.MobileDevTermProj.MainActivity"></activity>
-        <activity android:name="com.MobileDevTermProj.RagisterActivity" />
-        <activity android:name="com.MobileDevTermProj.LoginActivity">
+        <activity android:name=".SelectQuizActivity" />
+        <activity
+            android:name=".CreateQuizActivity"
+            android:label="Add Questions"></activity>
+        <activity
+            android:name=".StartQuizActivity"
+            android:label="Start Quiz"></activity>
+        <activity
+            android:name=".ResultActivity"
+            android:label="Result"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".RagisterActivity" />
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
