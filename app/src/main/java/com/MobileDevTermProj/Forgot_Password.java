@@ -19,7 +19,6 @@ public class Forgot_Password extends AppCompatActivity {
     private static final String PREFER_NAME = "Reg";
 
 
-    UserSession session;
 
     private SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
@@ -30,13 +29,12 @@ public class Forgot_Password extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
 
-        session = new UserSession(getApplicationContext());
         txtpassword1 = (EditText) findViewById(R.id.txtPassword1);
         Txtpassword2 = (EditText) findViewById(R.id.txtPassword2);
 
 
         bSubmit = (Button) findViewById(R.id.subButton);
-        sharedPreferences = getApplicationContext().getSharedPreferences("Reg", 0);
+        sharedPreferences = getSharedPreferences(PREFER_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
 
